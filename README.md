@@ -1,24 +1,43 @@
 ## KNN Implementation:
 
+The k-Nearest Neighbors (k-NN) algorithm is a instance-based machine learning algorithm used for classification and regression. In
+k-NN, the algorithm identifies the k data points in the training dataset that are closest to a given query point and makes predictions
+based on these neighbors.
+How to start the server:
+1. Go to the server folder, 
+2. Go to knn-server folder, this is the project directory 
+3. Run below command:
+```shell
+mvn clean install
+```
+4. Once above command is done, it generate artifact in the target folder.
+5. Run below command to start the server
+```shell
+java -jar knn-server-1.0-SNAPSHOT.jar <port2>
+```
+6. This will instantiate the one server. We have to follow the same step to instantiate another server.
+7. For another server, in another terminal repeat command 5 with different port.
+Doing will get you two running knn server.
 
-Command to run:
-
-Prerequisite:
-Server should be up and running.
-
-1. Go to client folder
-2. There you will find two subfolder, client1, and client2
+Now start the client:
+1. Go to client folder 
+2. There you will find two subfolder, client1, and client2 (Alternatively we can do that from the source itself like how we have
+done for the above server)
 3. Go to client1 folder, and run below command
 ```shell
-java -jar knn-client-1.0-SNAPSHOT.jar server1_port server2_port k query_point_x query_point_query_point_x 
+java -jar knn-client-1.0-SNAPSHOT.jar server1 _port server2_port k query_point_x query_y
 ```
+eg:
+```shell
+java -jar knn-client-1.0-SNAPSHOT.jar 6565 7575 5 0.214 0.334
+```
+
 Here:
 - server1_port: Port of server 1
 - server2_port: Port of server 2
 - query_point_x: x part of query coordinate
 - query_point_y: y part of query coordinate
 - k: how many point you want to locate from given query
-
 
 Q) Discuss how gRPC facilitates distributed computing in this example.
 In the knn implementation we have implemented the KNN where dataset is distributed among
