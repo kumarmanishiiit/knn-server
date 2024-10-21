@@ -34,15 +34,12 @@ public class KNNService extends KNNServiceGrpc.KNNServiceImplBase {
             Float key = entry.getKey();
             Float value = entry.getValue();
             float distance = calculateDistance(key, value, x_cord, y_cord);
-            System.out.println("Key : " + key + " Value: " + value + " Distance: " + distance + "\n");
+            log.info("Key : {} Value: {} Distance: {}", key, value, distance);
             dataPointList.put(distance, DataPoint.newBuilder().setXCord(key).setYCord(value).build());
         }
 
         // Sort the map by keys and extract k elements
         List<com.assignment.knn.model.DataPointResponse> sortedAndExtracted = sortAndExtract(dataPointList, k);
-
-
-//        DataPoint dataPoint1 = DataPoint.newBuilder().setXCord(1.2f).setYCord(3.4f).build();
 
         var kDataPoint = KNNResponse.newBuilder().addAllKDataPoint(sortedAndExtracted).build();
         responseObserver.onNext(kDataPoint);

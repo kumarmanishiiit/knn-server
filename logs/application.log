@@ -1,0 +1,6 @@
+102  [main] INFO  org.example.Main - No port number provided. Defaulting to 6565.
+178  [main] INFO  org.example.Main - server started. listening on port 6565.
+233  [main] INFO  org.example.GrpcServer - server started. listening on port 6565. services: java.util.stream.ReferencePipeline$3@1785d194
+106  [main] INFO  org.example.Main - No port number provided. Defaulting to 6565.
+179  [main] INFO  org.example.Main - server started. listening on port 6565.
+231  [main] INFO  org.example.GrpcServer - server started. listening on port 6565. services: java.util.stream.ReferencePipeline$3@1785d194
