@@ -52,3 +52,4 @@ Q) Comparison between gRPC and MPI in terms of communication models, usability, 
 | **Scalability**          | Scales well for loosely coupled services       | Scales in HPC clusters, tightly coupled systems |
 | **Concurrency**          | Supports async calls, concurrency through threading | Optimized for parallelism across processes  |
 
+![img.png](report%2Fimg.png)
